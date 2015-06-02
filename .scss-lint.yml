@@ -1,0 +1,36 @@
+linters:
+    Indentation:
+        width: 4
+
+    QualifyingElement:
+        enabled: false
+
+    PropertySortOrder:
+        enabled: false
+
+    FinalNewline:
+        enabled: false
+
+    NameFormat:
+        enabled: false
+
+    PlaceholderInExtend:
+        enabled: false
+
+    VendorPrefixes:
+        enabled: true
+
+    StringQuotes:
+        style: double_quotes
+
+    UrlQuotes:
+        enabled: false
+
+    NestingDepth:
+        max_depth: 4
+
+    SelectorFormat:
+        convention: 'hyphenated_lowercase'
+
+    MergeableSelector:
+        force_nesting: false

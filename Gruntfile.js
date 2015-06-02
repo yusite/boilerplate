@@ -1,7 +1,9 @@
 module.exports = function(grunt) {
 
     require('time-grunt')(grunt);
-    require('jit-grunt')(grunt);
+    require('jit-grunt')(grunt, {
+            scsslint: 'grunt-scss-lint'
+        });
 
     /* ====================================
         Project configuration
@@ -78,6 +80,13 @@ module.exports = function(grunt) {
                     '<%= project.css %>/style__<%= pkg.version %>.css': '<%= project.sass %>/style.scss'
                 }
             }
+        },
+
+        /*
+            Sass lint
+        ==================================== */
+        scsslint: {
+            src: '<%= project.sass %>/**/*.scs'
         },
 
         /*
@@ -171,6 +180,7 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('build:css', [
+        'scsslint',
         'sass:dev',
         'autoprefixer'
     ]);
